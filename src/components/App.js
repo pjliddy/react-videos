@@ -13,7 +13,9 @@ class App extends React.Component {
       params: { q: term }
     });
 
-    this.setState({ videos: response.data.items });
+    this.setState({
+      videos: response.data.items,
+      selectedVideo: response.data.items[0] });
   }
 
   // define callback as arrow function to bind 'this'
@@ -21,15 +23,28 @@ class App extends React.Component {
     this.setState({ selectedVideo: video });
   }
 
+  componentDidMount() {
+    this.onSearchSubmit('kittens');
+  }
+
   render() {
     return (
       <div className="ui container" style={{marginTop: '10px'}}>
         <SearchBar onFormSubmit={this.onSearchSubmit} />
-        <VideoDetail video={this.state.selectedVideo} />
-        <VideoList
-          videos={this.state.videos}
-          onVideoSelect={this.onVideoSelect}
-        />
+
+        <div className="ui grid">
+          <div className="ui row">
+            <div className="ten wide column">
+              <VideoDetail video={this.state.selectedVideo} />
+            </div>
+            <div className="six wide column">
+              <VideoList
+                videos={this.state.videos}
+                onVideoSelect={this.onVideoSelect}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

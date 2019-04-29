@@ -1,5 +1,5 @@
 .list > .video-item.item {
-  align-items: flex-start;
+  align-items: center;
   cursor: pointer;
   display: flex;
 }
