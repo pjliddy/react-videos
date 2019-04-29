@@ -1,10 +1,9 @@
-.video-item.item {
-  display: flex;
-  align-items: center;
+.ui.list > .video-item.item {
+  align-items: flex-start;
   cursor: pointer;
-  flex-wrap: nowrap;
+  display: flex;
 }
 
-.video-item.item img {
+.ui.list > .video-item.item img {
   max-width: 180px;
 }
