@@ -1,9 +1,9 @@
-.ui.list > .video-item.item {
+.list > .video-item.item {
   align-items: flex-start;
   cursor: pointer;
   display: flex;
 }
 
-.ui.list > .video-item.item img {
+.list > .video-item.item img {
   max-width: 180px;
 }
